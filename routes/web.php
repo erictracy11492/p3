@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'PigLatinController@index');
+Route::get('/translate', 'PigLatinController@translate');
