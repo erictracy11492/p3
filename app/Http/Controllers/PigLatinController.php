@@ -10,7 +10,8 @@ class PigLatinController extends Controller
     
     public function index() 
     {
-        return 'Show textarea and forms where user can input information';
+        //return 'Show textarea and forms where user can input information';
+        return view('piglatin.index');
     }
     
     public function translate() 
