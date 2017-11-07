@@ -12,16 +12,24 @@
     
   <body>
       
+                @if(count($errors) > 0)
+                <ul>
+                @foreach ($errors->all() as $error)
+                    <li id="errormessage">{{ $error }}</li>
+                @endforeach
+                </ul>
+                @endif
+      
       <h1>Pig Latin translator</h1>
       
-      <form method='get' action='index.php'>
+      <form method='GET' action='/'>
 
-        <p id="directions">Type into the box below and your words will translate into Pig Latin.</p>
+        <p id="directions">Type into the box below and your words will translate into Pig Latin above.</p>
           
           <!-- Input text box -->
           <h2>Type text to translate here:</h2>
-          <p id="beforewarning">*Letters and spaces only</p>
-          <textarea name="usertext" rows="6" cols="70"></textarea>
+          <p id="beforewarning">*REQUIRED</p>
+          <textarea name="usertext" rows="6" cols="70" value='{{ $usertext or '' }}'></textarea>
           
           <p>Rules: Words that begin with a consonant shift the first letter to the end and append suffix. Words that begin with a vowel add 'way' to the end.</p>
           
