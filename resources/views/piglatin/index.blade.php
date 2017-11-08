@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('display')
-    <h1>{{ $useroutput }}</h1>
+    <h2>{{ $useroutput }}</h2>
 @endsection
