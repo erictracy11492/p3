@@ -29,24 +29,31 @@ class PigLatinController extends Controller
                         if (strlen($word) > 3) {
                             if (in_array($word[0], $vowels)) {
                                 echo $word . 'w' . $_GET["suffix"] . ' ';
+                                $useroutput = $word . 'w' . $_GET["suffix"] . ' ';
                                 } else {
                                 echo $translatedword . $word[0] . $_GET["suffix"] . ' ';
+                                $useroutput = $translatedword . $word[0] . $_GET["suffix"] . ' ';
                                 }
                                 } else {
                                 echo $word . ' ';
+                                $useroutput = $word . ' ';
                                 }
                             } else {
                                 if (in_array($word[0], $vowels)) {
                                     echo $word . 'w' . $_GET["suffix"] . ' ';
+                                    $useroutput = $word . 'w' . $_GET["suffix"] . ' ';
                                 } else {
                                     echo $translatedword . $word[0] . $_GET["suffix"] . ' ';
+                                    $useroutput = $translatedword . $word[0] . $_GET["suffix"] . ' ';
                                 }
                             }
                     }
             }
 
                 #Return view
-                return view('piglatin.index');
+                return view('piglatin.index')->with([
+                    'useroutput' => $useroutput
+                ]);
     }
     
     public function translate() 

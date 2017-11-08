@@ -1,5 +1,5 @@
 @extends('layouts.master')
 
 @section('display')
-    <p>Translation appears above</p>
+    <h1>{{ $useroutput }}</h1>
 @endsection
