@@ -11,14 +11,14 @@
   </head>
     
   <body>
-                <!--Errors -->
-                @if(count($errors) > 0)
-                <ul>
-                @foreach ($errors->all() as $error)
-                    <li id="errormessage">{{ $error }}</li>
-                @endforeach
-                </ul>
-                @endif
+        <!--Errors -->
+        @if(count($errors) > 0)
+        <ul>
+        @foreach ($errors->all() as $error)
+        <li id="errormessage">{{ $error }}</li>
+        @endforeach
+        </ul>
+        @endif
       
       <h1>Pig Latin translator</h1>
       
@@ -43,16 +43,10 @@
             <input type="checkbox" name="threeletter" value="yes" checked> Words that are shorter than 3 characters are unchanged (Example: "be" = "be")<br><br><br>
           
           <input id="submit" type="submit" value="Translate">
-          
-            <!--PHP starts -->
-
-            <!--PHP ends -->
-          
+        
           <section>
               @yield('display')
           </section>
-   
-            <!-- error display -->
 
       </form>
       
